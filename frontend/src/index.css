@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #05080f;
+  --surface:   #0c1120;
+  --surface2:  #111827;
+  --surface3:  #161f35;
+  --border:    #1e2d4a;
+  --border2:   #2a3d60;
+  --accent:    #00d4ff;
+  --accent2:   #7c3aed;
+  --success:   #10b981;
+  --danger:    #ef4444;
+  --warning:   #f59e0b;
+  --text:      #e2e8f0;
+  --text-muted:#64748b;
+  --font:      'Syne', sans-serif;
+  --mono:      'DM Mono', monospace;
+  --radius:    12px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+button { font-family: var(--font); cursor: pointer; }
+input, select, textarea { font-family: var(--font); }
+
+/* ── Print styles ─────────────────────────────────────────────────── */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  .sidebar, .topbar, .page-header-actions { display: none !important; }
+  .app-layout { display: block !important; }
+  .app-main { padding: 0 !important; }
+  .card { border: 1px solid #ccc !important; background: #fff !important; }
+  .data-table th, .data-table td { color: #000 !important; border-color: #ccc !important; }
+  .badge-present { background: #d1fae5 !important; color: #065f46 !important; }
+  .badge-absent  { background: #fee2e2 !important; color: #991b1b !important; }
+}
